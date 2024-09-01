@@ -1,0 +1,173 @@
+
+
+.container-cenert{
+    display: flex;
+    height: 400px;
+    width: 700px;
+    border-radius: 20px;
+    background: white;
+
+    .left-container{
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        padding: 20px;
+        border-radius: 20px;
+
+        span{
+            margin-top: 2px;
+            font-size: 10px;
+            color: red;
+        }
+
+        .menu-container{
+            display: flex;
+            margin-top: 20px;
+            justify-content: space-between;
+            
+            button{
+                height: 20px;
+                color: blue;
+                background: white;
+                border: none;
+                font-size: 10px;
+                text-decoration: underline;
+                cursor: pointer;
+            }
+        }
+
+        .mortgage-input-container{
+            display: flex;
+            margin-top: 30px;
+            flex-direction: column;
+
+            input{
+                height: 26px;
+                padding: 0px 0px 0px 4px;
+            }
+        }
+
+        .inputs-mortgageTeam-and-interestRate-container{
+            display: flex;
+            margin-top: 10px;
+            gap: 56px;
+
+            .mortgageTeam-input-container{
+                display: flex;
+                position: relative;
+                flex-direction: column;
+
+                .years{
+                    position: absolute;
+                    top: 24px;
+                    right: 0;
+                    display: flex;
+                    margin-bottom: 0px;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 10px;
+                    height: 26px;
+                    width: 40px;
+                    background: rgb(38 170 182 / 21%);
+
+                    .text-years{
+                        margin-bottom: 0px;
+                        color: blue;
+                    }
+                }
+
+                input{
+                    height: 26px;
+                    width: 140px;
+                    padding: 0px 0px 0px 4px;
+                }
+            }
+
+            .interestRate-input-container{
+                display: flex;
+                position: relative;
+                flex-direction: column;
+
+                .percentage{
+                    position: absolute;
+                    top: 24px;
+                    right: 0;
+                    display: flex;
+                    margin-bottom: 0px;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 10px;
+                    height: 26px;
+                    width: 40px;
+                    background: rgb(38 170 182 / 21%);
+
+                    .percentage-text{
+                        margin-bottom: 0px;
+                        color: blue;
+                    }
+                }
+
+                input{
+                    height: 26px;
+                    width: 140px;
+                    padding: 0px 0px 0px 4px;
+                }
+            }
+        }
+
+        .mortagageType-container{
+            display: flex;
+            margin-top: 10px;
+            flex-direction: column;
+            align-items: flex-start;
+
+            .text-without-margin{
+                margin: 0px 0px 0px 14px;
+            }
+
+            .repayment-container{
+                display: flex;
+                align-items: center;
+                height: 30px;
+                width: 100%;
+                margin-bottom: 10px;
+                border: 1px solid;
+
+                input{
+                    margin-left: 10px;
+                }
+            }
+
+            .interest-only{
+                display: flex;
+                align-items: center;
+                height: 30px;
+                width: 100%;
+                margin-bottom: 8px;
+                border: 1px solid;
+
+                input{
+                    margin-left: 10px;
+                }
+            }
+        }
+        .calculate-repayment{
+            padding: 10px;
+            border-radius: 20px;
+            margin: 5% 0% 0% 20%;
+            width: 200px;
+            border: none;
+            background: yellow;
+        }
+    }
+
+    .right-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        flex: 1;
+        background: black;
+        border-radius: 0px 20px 20px 80px;
+    }
+}

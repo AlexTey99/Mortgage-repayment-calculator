@@ -1,0 +1,80 @@
+
+
+<div class="container-cenert">
+    <div class="left-container">
+
+        <form>
+            <div class="menu-container">
+                <h2>Mortgage Calculator</h2>
+                <button type="reset">Clear All</button>
+            </div>
+
+            <div class="mortgage-input-container">
+                <p>Mortgage Acount</p>
+                <input type="text" name="MortgageAcount" [formControl]="MortgageAcount">
+                <div [hidden]="MortgageAcount.valid || MortgageAcount.pristine">
+                    <span *ngIf="MortgageAcount.hasError('required') && (MortgageAcount.dirty || MortgageAcount.touched)">
+                        This field is required
+                    </span>
+                    <span *ngIf="MortgageAcount.hasError('pattern') && (MortgageAcount.dirty || MortgageAcount.touched)">
+                      Only numbers, please
+                    </span>
+                </div>
+            </div>
+
+            <div class="inputs-mortgageTeam-and-interestRate-container">
+                <div class="mortgageTeam-input-container">
+                    <p>Mortgage Team</p>
+                    <div class="years">
+                        <p class="text-years">years</p>
+                    </div>
+                    <input type="text"  name="MortgageTeam" [formControl]="MortgageTeam">
+                    <div [hidden]="MortgageTeam.valid || MortgageTeam.pristine">
+                        <span *ngIf="MortgageTeam.hasError('required') && (MortgageTeam.dirty || MortgageTeam.touched)">
+                            This field is required
+                        </span>
+                        <span *ngIf="MortgageTeam.hasError('pattern') && (MortgageTeam.dirty || MortgageTeam.touched)">
+                          Only numbers, please
+                        </span>
+                    </div>
+                </div>
+
+                <div class="interestRate-input-container">
+                    <p>Interest Rate</p>
+                    <div class="percentage">
+                        <p class="percentage-text">%</p>
+                    </div>
+                    <input type="text" name="InterestRate" [formControl]="InterestRate">
+                    <div [hidden]="InterestRate.valid || InterestRate.pristine">
+                        <span *ngIf="InterestRate.hasError('required') && (InterestRate.dirty || InterestRate.touched)">
+                            This field is required
+                        </span>
+                        <span *ngIf="InterestRate.hasError('pattern') && (InterestRate.dirty || InterestRate.touched)">
+                          Only numbers, please
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mortagageType-container">
+                <p>Mortagage Type</p>
+                <div class="repayment-container">
+                    <input type="radio" name="mortgageType" [(ngModel)]="selectedOption" value="repayment">
+                    <p class="text-without-margin">Repayment</p>
+                </div>
+                
+                <div class="interest-only">
+                    <input type="radio" name="mortgageType" [(ngModel)]="selectedOption" value="interestOnly">
+                    <p class="text-without-margin">Interest Only</p>
+                </div>
+                <span *ngIf="showWarning">This field is required</span>
+            </div>
+            <button type="button" (click)="validation()" class="calculate-repayment"
+            [disabled]="MortgageAcount.invalid || MortgageTeam.invalid || InterestRate.invalid">Calculate Repayment</button>
+        </form>
+    </div>
+
+    <div class="right-container">
+        <h1>{{MortgageAcount.value}}</h1>
+    </div>
+</div>
