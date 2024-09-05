@@ -165,9 +165,11 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        flex-direction: column;
         color: white;
         flex: 1;
         background: black;
         border-radius: 0px 20px 20px 80px;
     }
+    
 }

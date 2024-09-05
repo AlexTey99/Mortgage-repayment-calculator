@@ -28,6 +28,10 @@ export class ContainerCenterComponent {
   selectedOption: string | null = null;
   showWarning = false;
 
+  // Resultados del cálculo
+  monthlyPayment: number | null = null;
+  totalPayment: number | null = null;
+
   validation() {
     if (!this.selectedOption) {
       this.showWarning = true;
@@ -37,4 +41,23 @@ export class ContainerCenterComponent {
       console.log("Opción seleccionada: ", this.selectedOption);
     }
   }
+
+
+
+  // Función para calcular el pago mensual y total
+  calculateMortgage() {
+    const principal = Number(this.MortgageAcount.value);
+    const annualInterestRate = Number(this.InterestRate.value) / 100;
+    const monthlyInterestRate = annualInterestRate / 12;
+    const numberOfPayments = Number(this.MortgageTeam.value) * 12;
+
+    if (monthlyInterestRate > 0) {
+      this.monthlyPayment = (principal * monthlyInterestRate) / (1 - Math.pow(1 + monthlyInterestRate, -numberOfPayments));
+    } else {
+      this.monthlyPayment = principal / numberOfPayments;
+    }
+
+    this.totalPayment = this.monthlyPayment * numberOfPayments;
+  }
+
 }
